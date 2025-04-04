@@ -5,6 +5,6 @@ https://github.com/serd223/entry
 
 ## Quick Start
 ```console
-	$ v .
-	$ ./entry
+$ v .
+$ ./entry
 ```
