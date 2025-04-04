@@ -3,6 +3,7 @@ module entry_runtime
 pub enum Headache {
 	wtf
 	todo
+	wheresthehole
 }
 
 struct Entry {
@@ -14,11 +15,14 @@ pub mut:
 }
 
 pub fn go(code string) Headache {
+	if code.len < 1 {
+		return Headache.wheresthehole
+	}
+
 	mut entry := Entry{}
 	mut index := 0
 
 	for {
-		index++
 		if index > code.len {
 			break
 		}
@@ -117,8 +121,7 @@ pub fn go(code string) Headache {
 							if entry.skip {
 								entry.skip = false
 							} else {
-								if entry.pizza_slicer == 0 {entry.pizza_slicer = 256}
-								entry.pizza_slicer--
+								entry.sandwich[entry.pizza_slicer] = input_character()
 							}
 							break
 						}
